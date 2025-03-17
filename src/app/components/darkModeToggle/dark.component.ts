@@ -10,9 +10,14 @@ import { Component } from "@angular/core";
 export class DarkModeToggle{
     darkMode: boolean = false;
     
+    constructor(){
+        this.darkMode =  window.matchMedia('(prefers-color-scheme:dark)').matches ? true : false;
+        this.darkMode ? document.documentElement.setAttribute("data-theme",'dark'): document.documentElement.setAttribute("data-theme", 'light')
+    
+    }
 
     onToggleDarkMode(){
         this.darkMode = !this.darkMode;
-        this.darkMode ? document.body.classList.add('dark-mode') : document.body.classList.remove('dark-mode');  
+        this.darkMode ? document.documentElement.setAttribute("data-theme",'dark'): document.documentElement.setAttribute("data-theme",'light');  
     }
 }

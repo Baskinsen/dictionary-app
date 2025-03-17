@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: light-dark(#f2f2f2, #1F1F1F); ;
     border-radius: 15px;
     padding: 10px;
     font-size: 24px;
@@ -16,6 +16,7 @@
     height: 100%;
     border: none;
     background-color: transparent;
+    color: light-dark(#1F1F1F, #ffffff);
     font-size: 1.2rem;
     padding: 10px;
     border-radius: 5px;
@@ -33,15 +34,6 @@ img {
 
 
 
-@media (prefers-color-scheme: dark) {
-    .search-bar {
-        background-color: #1F1F1F;
-
-        & input {
-            color: #ffffff;
-        }
-    }
-}
 
 .invalid {
     border: 1px solid #FF5252;
