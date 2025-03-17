@@ -1,0 +1,17 @@
+
+
+<div class="font-dropdown-container">
+    <div class="font-dropdown" (click)="onToggleDropdown()">
+        <label for="font">{{selectedFont}}</label>
+        <img src="public/icons/chevon-down.svg" alt="">
+    </div>
+    <div >
+        @if(showDropdown){
+            <ul>
+                @for(font of fonts; track $index;){
+                    <li (click)="onSelect(font)" [style]="{'font-family': font}" >{{font}}</li>
+                }
+            </ul>
+        }
+    </div>
+</div>

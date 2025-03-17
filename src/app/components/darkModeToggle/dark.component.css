@@ -1,0 +1,12 @@
+
+
+div:has(.dark-mode-toggle){
+    width: 100%;
+  
+
+}
+
+.dark-mode-toggle {
+    display: flex;
+    gap: 20px;
+}

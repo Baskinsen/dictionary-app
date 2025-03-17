@@ -1,0 +1,9 @@
+<main>
+  <app-header></app-header>
+  <search-bar></search-bar>
+  @if (word()) {
+    <app-word-meaning></app-word-meaning>
+  } @else {
+    <word-not-found></word-not-found>
+  }
+</main>

@@ -1,0 +1,49 @@
+<section>
+<div class="word-heading" >
+ <div>
+   <h1>{{word()?.word}}</h1>
+   <h2>{{word()?.phonetic}}</h2>
+ </div>
+ <div class="play-button" (click)="playAudio()">
+   <img src="/public/icons/play.svg" alt="">
+ </div>  
+</div>
+@for(meaning of word()?.meanings; track $index ) {
+
+   <div class="word-meaning">
+      <div class="meaning-header">
+         <h2>{{meaning.partOfSpeech}}</h2>
+         <span></span>
+      </div>
+      <div class="meaning-content">
+         <h3>Meaning</h3>
+         @for(definition of meaning.definitions; track $index) {
+            <ul>
+               <li>{{definition.definition}}</li>
+              
+            </ul>
+            <ul class="example" *ngIf="definition.example">
+             <li>"{{definition.example}}"</li>
+            </ul>
+         }
+         <div class="synonyms" *ngIf="meaning.synonyms.length > 0">
+            <h2>Synonyms</h2>
+            <ul>
+               @for(synonym of meaning?.synonyms; track $index) {
+                  <li>{{synonym}}<span *ngIf="$index !== meaning.synonyms.length">,</span></li>
+               }
+            </ul>
+         </div>
+         <div class="synonyms" *ngIf="meaning.antonyms.length > 0">
+            <h2>Antonyms</h2>
+            <ul>
+               @for(antonym of meaning?.antonyms; track $index) {
+                  <li>{{antonym}}<span *ngIf="$index !== meaning.antonyms.length">,</span> </li>
+               }
+            </ul>
+         </div>
+      </div>
+   </div>
+
+}
+</section>

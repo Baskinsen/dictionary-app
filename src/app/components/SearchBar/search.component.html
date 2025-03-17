@@ -1,0 +1,10 @@
+
+<div>
+    <div class="search-bar" class="{{error() ? 'invalid' : ''}}">
+        <input type="text" placeholder="Search for a word..." (keyup)="onSearch($event) " >
+        <img src="public/icons/search.svg" alt="search icon">
+    </div>
+    <span>
+        <p *ngIf="error()">Whoops can't be empty...</p>
+    </span>
+</div>
