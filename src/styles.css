@@ -27,7 +27,7 @@ app-root {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    width: 100dvw;
+    /* max-width: 100dvw; */
     background-color: light-dark(#f0f0f0, #050505) ;
     color: light-dark(#1F1F1F, #ffffff);
     margin: 0;

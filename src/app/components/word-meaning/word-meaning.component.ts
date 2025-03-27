@@ -28,7 +28,6 @@ export class WordMeaning {
   playAudio() {
     if(this.word() && this.word()?.phonetics[0].audio !== null || undefined) {
       let audio = new Audio(this.word()?.phonetics[0].audio);
-      // audio.src = this.word()?.phonetics[0].audio;
       audio.play()
     }
      
